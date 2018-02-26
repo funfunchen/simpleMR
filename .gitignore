@@ -19,3 +19,8 @@
 *.Re
 *.Rproj
 .Rproj.user
+
+
+# test files
+##############
+.test

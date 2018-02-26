@@ -1,11 +1,15 @@
 Package: mrAll
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Mendelian Randomization implementation
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Fang Chen
+Maintainer: Fang Chen <funfun.chen@gmail.com>
+Description: mrAll is a R package for Mendelian Randomization implementation using GWAS summarized data.
+License: GPL3
 Encoding: UTF-8
+Imports:
+    tidyverse(>= 1.2.0),
+    knitr
+Suggests: rmarkdown, testit
 LazyData: true
+RoxygenNote: 6.0.1
