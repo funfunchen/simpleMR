@@ -19,7 +19,7 @@
 *.Re
 *.Rproj
 .Rproj.user
-
+.DS_Store
 
 # test files
 ##############

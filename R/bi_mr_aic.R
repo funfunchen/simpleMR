@@ -53,8 +53,8 @@ lh_M <- function(x_hat, x, n_x, y_hat, y, n_y){
 #'
 #' @export
 bi_mr_aic <- function(X.set, Y.set){
-  n_x <- length(X.set$X_x_beta);
-  n_y <- length(Y.set$Y_x_beta);
+  n_x <- rd_info(X.set)$expo.n;
+  n_y <- rd_info(Y.set)$out.n;
   if(n_x <= 3 | n_y <= 3){
     warning("Not enough data for AIC caculation");
     return(NA);

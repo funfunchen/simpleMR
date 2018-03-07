@@ -10,9 +10,9 @@ rd_info(file_to_rd)
 \item{file_to_rd}{the summary statistics file}
 }
 \value{
-a list contains \code{beta}, \code{se};
-or the \code{expo.beta}, \code{expo.se} of exposure trait in exposure ascertainment data set
-the \code{out.beta}, \code{out.se}  of outcome trait in exposure ascertainment data set
+a list contains \code{beta}, \code{se}, \code{n};
+or the \code{expo.beta}, \code{expo.se}, \code{expo.n} of exposure trait in exposure ascertainment data set
+the \code{out.beta}, \code{out.se}, \code{out.n} of outcome trait in exposure ascertainment data set
 }
 \description{
 Subset the file to get summary statistics information
