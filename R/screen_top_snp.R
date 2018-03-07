@@ -11,7 +11,7 @@
 #' @export
 
 screen_top_snp <- function(infile, window.size, pvalue){
-  if (length(infile) == 0) stop("no records in the file");
+  if (nrow(infile) == 0) stop("no records in the file");
   new.data <- infile[0,];
   for (i in unique(infile$CHROM)){
     file.chrom <- filter(infile, CHROM == i) %>% arrange_(pvalue); #  use the standard evaluation versions of the dplyr functions (just append '_' to the function names, ie. group_by_ & summarise_)
