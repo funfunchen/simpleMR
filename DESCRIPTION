@@ -10,6 +10,9 @@ Encoding: UTF-8
 Imports:
     tidyverse(>= 1.2.0),
     knitr
+    gridExtra
+    grid
+    ggrepel
 Suggests: rmarkdown, testit
 LazyData: true
 RoxygenNote: 6.0.1
