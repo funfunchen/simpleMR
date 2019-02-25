@@ -20,6 +20,7 @@
 *.Rproj
 .Rproj.user
 .DS_Store
+.Rhistory
 
 # test files
 ##############
