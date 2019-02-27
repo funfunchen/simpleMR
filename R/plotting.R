@@ -201,17 +201,26 @@ mr_cook_distance_plot <- function(distance_result) {
 
 report_diagnositc_plots <- function(dat) {
   res <- mr(dat)
-  p1 <- mr_scatter_plot(res, dat)
-  res_single <- mr_singlesnp(dat)
-  p2 <- mr_forest_plot(res_single)
-  res_loo <- mr_leaveoneout(dat)
-  p3 <- mr_leaveoneout_plot(res_loo)
-  # p4 <- mr_funnel_plot(res_single)
-  cooke_d <- mr_cook_distance(dat)
-  p4 <- mr_cook_distance_plot(cooke_d)
+  if(nrow(dat) > 20){
+    warning("too many snps, only show scatter and cook-d plots");
+    p1 <- mr_scatter_plot(res, dat)
+    cooke_d <- mr_cook_distance(dat)
+    p2 <- mr_cook_distance_plot(cooke_d)
+    p <- try(grid.arrange(p1[[1]], p4, ncol=2,
+                          top = textGrob(label = paste0("MR analysis of ", dat$expo.id, " on ", dat$out.id),
+                          gp = gpar(fontsize = 14, font = 2))))
+  }else{
+    p1 <- mr_scatter_plot(res, dat)
+    res_single <- mr_singlesnp(dat)
+    p2 <- mr_forest_plot(res_single)
+    res_loo <- mr_leaveoneout(dat)
+    p3 <- mr_leaveoneout_plot(res_loo)
+    # p4 <- mr_funnel_plot(res_single)
+    cooke_d <- mr_cook_distance(dat)
+    p4 <- mr_cook_distance_plot(cooke_d)
   
-  p <- try(grid.arrange(p1[[1]], p2[[1]], p3[[1]], p4, ncol=2,
+    p <- try(grid.arrange(p1[[1]], p2[[1]], p3[[1]], p4, ncol=2,
                         top = textGrob(label = paste0("MR analysis of ", dat$expo.id, " on ", dat$out.id),
                         gp = gpar(fontsize = 14, font = 2))))
-  
+  }
 }
